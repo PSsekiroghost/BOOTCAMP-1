@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>360&deg; Video Gallery</title>
+    <meta name="description" content="360&deg; Video Gallery - A-Frame">
+    <script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-event-set-component@5/dist/aframe-event-set-component.min.js"></script>
+    <script src="https://unpkg.com/aframe-layout-component@5.3.0/dist/aframe-layout-component.min.js"></script>
+    <script src="https://unpkg.com/aframe-template-component@3.2.1/dist/aframe-template-component.min.js"></script>
+    <script src="https://unpkg.com/aframe-proxy-event-component@2.1.0/dist/aframe-proxy-event-component.min.js"></script>
+    <script src="/scripts/play-on-click.js"></script>
+    <script src="/scripts/hide-on-play.js"></script>
+
+    <!-- Image link template to be reused. -->
+    <script id="link" type="text/html">
+      <a-entity class="link"
+        geometry="primitive: plane; height: 1.2; width: 1.2"
+        material="shader: flat; src: ${thumb}"
+        event-set__mouseenter="scale: 1.2 1.2 1"
+        event-set__mouseleave="scale: 1 1 1"
+        sound="on: click; src: #click-sound"></a-entity>
+    </script>
+    <script>
+      function simulateCenterClick() {
+        // Get the width and height of the viewport
+        const viewportWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+        const viewportHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+      
+        // Calculate the center coordinates
+        const centerX = viewportWidth / 2;
+        const centerY = viewportHeight / 2;
+      
+        // Create a new MouseEvent object
+        const clickEvent = new MouseEvent('click', {
+          view: window,
+          bubbles: true,
+          cancelable: true,
+          clientX: centerX,
+          clientY: centerY
+        });
+      
+        // Dispatch the click event to the document
+        document.dispatchEvent(clickEvent);
+      }
+      // Function to handle touch actions
+      function handleTouchAction(event) {
+        // Prevent default behavior to avoid scrolling or other unwanted effects
+
+        // Check if the touch action was a tap (single touch)
+        if (event.touches.length === 1) {
+          // Call the function to simulate a click at the center of the viewport
+          simulateCenterClick();
+        }
+      }
+
+      // Attach the event handler to the document
+      document.addEventListener('touchstart', handleTouchAction);
+      document.addEventListener('touchmove', handleTouchAction);
+      document.addEventListener('touchend', handleTouchAction);
+    </script>
+  </head>
+  <body>
+    <a-scene>
+      <a-assets>
+        <video id="hulk"
+              autoplay
+              loop
+              crossorigin="anonymous"
+              playsinline webkit-playsinline
+              src="/Videos/hulk.mp4">
+        </video>
+        <img id="rip-thumb" crossorigin="anonymous" src="/Imagens/buttons/jurassic.png">
+        <audio id="click-sound" crossorigin="anonymous" src="/Audio/click.ogg"></audio>
+      </a-assets>
+      <a-videosphere id="video-360"
+        rotation="0 90 0" src="#hulk"
+        play-on-click>
+      </a-videosphere>
+      <a-entity link="href: /pages/jurassic.html" template="src: #link" data-thumb="#rip-thumb"rotation="-60 0 0" position="0 -3.5 -1.8"></a-entity>
+      <a-camera>
+        <a-cursor
+          id="cursor"
+          animation__click="property: scale; startEvents: click; from: 0.1 0.1 0.1; to: 1 1 1; dur: 150"
+          animation__fusing="property: fusing; startEvents: fusing; from: 1 1 1; to: 0.1 0.1 0.1; dur: 1500"
+          event-set__mouseenter="_event: mouseenter; color: red"
+          event-set__mouseleave="_event: mouseleave; color: black"
+          raycaster="objects: .link"></a-cursor>
+        <a-entity
+          position="0 0 -1.5"
+          text="align:center;
+                width:6;
+                wrapCount:100;
+                color: white;
+                value: "
+          hide-on-play="#hulk">
+        </a-entity>
+      </a-camera>
+    </a-scene>
+  </body>
+</html>

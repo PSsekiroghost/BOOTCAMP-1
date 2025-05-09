@@ -1,0 +1,43 @@
+.texto-pequeno{
+    font-size: 13px;
+    color: white;
+}
+
+.divs_facilidades{
+    width: 325px;
+}
+
+.div-novidades{
+    width: 325px;
+}
+
+@media(min-width:768px){
+    .div-novidades{
+        width: 696px;
+    }
+}
+
+.btn-primary{
+    background-color: #9353FF;
+    text-decoration: none;
+    color: white;
+    padding: 7px;
+}
+
+.texto_titulo{
+    color: white;
+}
+
+.texto_grande{
+    color: #DAFF01;
+}
+
+.icones{
+    color: #DAFF01;
+}
+
+.novidades_enviar{
+    background-color: #9353FF;
+    text-decoration: none;
+    color: white;
+}

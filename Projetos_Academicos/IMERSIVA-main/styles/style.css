@@ -1,0 +1,442 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+}
+a {
+    text-decoration: none;
+    color: black;
+}
+body {
+    overflow-x: hidden;
+}
+
+/* Config Header */
+
+header {
+    width: 100vw;
+    min-height: 8vh;
+}
+
+.navbar .nav-item .nav-link {
+    display: flex;
+    align-items: flex-end;
+    justify-content: start;
+    width: 100%;
+    height: 5vh;
+}
+
+.navbar .nav-item .nav-link:focus {
+    scale: 1.015;
+}
+
+.navbar-nav {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+
+/* Config MAIN */
+
+main {
+    width: 100vw;
+    min-height: 100vh;
+    margin-top: 5vh;
+}
+
+.Logo-Menu {
+    width: 60px;
+    height: 60px;
+}
+
+.boxVr {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 60vh;
+}
+
+.boxVr1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 30%;
+    height: 100%;
+}
+
+.boxVr1 div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.boxVr1 div h1 {
+    text-align: center;
+    font-size: 4rem;
+    font-weight: 600;
+}
+
+.boxVr1 div h2 {
+    text-align: justify;
+    font-size: 1.1rem;
+}
+
+.boxVr1 iframe {
+    margin-top: 5vh;
+}
+
+.boxVr2 {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 70%;
+    height: 100%;
+}
+
+.boxVr2 .imgVR {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.boxVr2 .imgVR img {
+    width: 40%;
+}
+
+.VRimagens {
+    width: 32%;
+}
+
+.containerImersoes {
+    width: 100%;
+    display: flex;
+}
+
+.containerImersoesTexto a {
+    text-decoration: none;
+    color: black;
+}
+
+.containerImersoesTexto img {
+    width: 100%;
+}
+
+.containerImersoesTexto h3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.containerImersoesTexto p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*Footer*/
+
+footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100vw;
+    margin-top: 5%;
+    background-color: #d9d9d9;
+}
+
+.containerFooter {
+    width: 100%;
+    display: flex;
+}
+
+.boxImgFooter {
+    width: 50%;
+    height: 200px;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+
+.boxImgFooter img {
+    height: 70%;
+    margin-right: 5%;
+}
+
+.boxItemsFooter {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    height: 200px;
+}
+
+.boxItemsFooter ul {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    justify-content: space-around;
+}
+
+.boxItemsFooter ul li {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    width: 100%;
+    list-style: none;
+    height: 35px;
+    padding-left: 5%;
+}
+
+.containerFooter a {
+    font-size: 1rem;
+    text-decoration: none;
+    color: black;
+}
+
+.containerFooterUltimo {
+    display: flex;
+    width: 100%;
+    height: 6vh;
+    justify-content: center;
+    align-items: center;
+}
+
+/* CONFIG CARROSEL SWIPER */
+
+.swiper {
+    width: 90%;
+    height: 60vh;
+}
+
+.swiper-slide {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.swiper-slide img {
+    width: 100%;
+    height: 100%;
+}
+
+.slidePC {
+    display: block;
+}
+
+/* MEDIA querie */
+
+@media screen and (max-width: 1280px) {
+    .boxVr1 div h1 {
+        font-size: 4rem;
+    }
+
+    .boxVr1 div h2 {
+        font-size: 1rem;
+    }
+
+    .boxVr1 div iframe {
+        width: 80%;
+        height: 30%;
+    }
+
+    .carroselVr {
+        width: 99.8vw;
+    }
+
+    .containerImersoesTexto p {
+        font-size: 1rem;
+    }
+
+    .containerImersoesTexto {
+        width: 33%;
+    }
+}
+
+@media screen and (max-width: 760px) {
+    /* borda header */
+    .bdr {
+        width: 30%;
+        height: 2px;
+        background-color: rgb(141, 141, 141);
+    }
+
+    /* HEADER */
+
+    .navbar .nav-item .nav-link {
+        display: flex;
+        align-items: flex-end;
+        justify-content: start;
+        width: 100%;
+        height: 5vh;
+    }
+
+    .navbar .nav-item .nav-link:focus {
+        scale: 1.015;
+    }
+
+    .boxVr {
+        flex-direction: column;
+        height: 50vh;
+        margin-top: 3vh;
+    }
+
+    .boxVr1 {
+        width: 100%;
+        height: 15%;
+    }
+
+    .boxVr1 div {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: end;
+    }
+
+    .boxVr1 div h1 {
+        font-weight: 700;
+        font-size: 2rem;
+    }
+
+    .boxVr1 div h2 {
+        font-size: 1rem;
+    }
+
+    .boxVr2 {
+        width: 100%;
+        height: 70%;
+    }
+
+    .boxVr2 img {
+        margin: 0;
+    }
+
+    .boxVr2 .imgVR {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+    }
+
+    .boxVr2 .imgVR img {
+        width: 45%;
+    }
+
+    .boxVr2 .umImg {
+        margin: 0;
+    }
+
+    .swiper {
+        width: 100%;
+        height: 200px;
+    }
+
+    .videoVr {
+        display: none;
+    }
+
+    .containerHeaderAmbientes {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 5vh;
+        width: 100%;
+    }
+
+    .containerHeaderAmbientes h1 {
+        font-size: 1.6rem;
+        font-weight: 600;
+    }
+
+    .containerHeaderAmbientes p {
+        width: 90%;
+        text-align: center;
+    }
+
+    .containerImersoes {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .containerImersoesTexto {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .containerImersoesTexto p {
+        width: 100%;
+        font-weight: 400;
+        font-size: 0.9rem;
+        text-align: center;
+    }
+
+    .containerImersoesTexto h3 {
+        font-size: 1.2rem;
+        width: 100%;
+        text-align: center;
+    }
+
+    /* FOOTER CONFIG */
+
+    .containerFooter {
+        width: 100%;
+        min-height: 25vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .boxImgFooter {
+        width: 45%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .boxItemsFooter {
+        width: 55%;
+    }
+
+    .boxImgFooter img {
+        width: 60%;
+    }
+
+    .boxItemsFooter a {
+        font-size: 0.7rem;
+        font-weight: 600;
+    }
+
+    .containerFooterUltimo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 8vh;
+        border-top: 1px solid #0000008f;
+    }
+
+    .containerFooterUltimo p {
+        font-size: 0.8rem;
+        font-weight: 300;
+        text-align: center;
+        text-transform: uppercase;
+    }
+}
